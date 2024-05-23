@@ -2,10 +2,11 @@ import React from "react";
 import Navbar from "./Navbar";
 import HeroSectionCentre from "./HeroSectionCentre";
 
-export default function HeroSection() {
+export default function HeroSection( {TeamRef} ) {
+	
 	return (
 		<div className="w-full h-[100vh] relative flex items-center justify-center ">
-			<Navbar />
+			<Navbar TeamRef={TeamRef} />
 			<img
 				className="absolute w-[100%] max-w-[1000px] top-0 left-0 "
 				src="/purplebackdrop.svg"

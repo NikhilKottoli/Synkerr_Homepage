@@ -4,11 +4,11 @@ import "./Carousel.css";
 import { Tabs, Tab } from "@nextui-org/react";
 import { Avatar } from "@nextui-org/react";
 
-const Carousel = () => {
+const Carousel = React.forwardRef((props, ref) => {
 	const [selectedTab, setSelectedTab] = useState("All");
 	const [autoSlideEnabled, setAutoSlideEnabled] = useState(true); // State to toggle auto slide
 	const getTabClassName = (tabName) => {
-		return selectedTab === tabName ? "selected-tab" : "";
+	  return selectedTab === tabName ? "selected-tab" : "";
 	};
 	let teamData = {
 		All: [
@@ -109,7 +109,7 @@ const Carousel = () => {
 	}, [autoSlideEnabled]); // Re-run effect when auto slide state changes
 
 	return (
-		<div className="h-screen w-full bg-black text-5xl flex flex-col justify-center items-center mt-60">
+		<div ref={ref} className="h-screen w-full bg-black text-5xl flex flex-col justify-center items-center mt-60">
 			<div className="h-[20%] w-full bg-black flex justify-center items-center">
 				<h1 className="" id="Team">
 					OUR TEAM
@@ -242,6 +242,6 @@ const Carousel = () => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default Carousel;

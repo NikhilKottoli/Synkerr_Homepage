@@ -1,7 +1,9 @@
 import React from "react";
 
 export default function HeroSectionCentre() {
+	
 	return (
+		
 		<div className="flex flex-col  items-center  relative">
 			<p className="z-[5] text-[30px] lg:text-[50px] font-light text-[#a9a9a9]">
 				Exploit the power of
