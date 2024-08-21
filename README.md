@@ -16,9 +16,3 @@ You can view the live website here: [synkerr.com](http://synkerr.com)
 
 - **React**: A JavaScript library for building user interfaces.
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **GitHub Pages**: Hosting platform used to deploy the static website.
-
-## 📁 Project Structure
-
-Here's an overview of the project's structure:
-
