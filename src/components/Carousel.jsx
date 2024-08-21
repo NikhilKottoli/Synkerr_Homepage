@@ -13,68 +13,31 @@ const Carousel = React.forwardRef((props, ref) => {
 	let teamData = {
 		All: [
 			{
-				name: "Abhay Tai",
+				name: "John Doe",
 				role: "Founder",
-				image:
-					"https://media.licdn.com/dms/image/D5603AQFm5xdxd0vHKA/profile-displayphoto-shrink_100_100/0/1712607280250?e=1720656000&v=beta&t=dLXQtOIiC5v-M6PJf8M67iKpUwgKDYP4bamsx0rWLz4",
 			},
 			{
-				name: "Sahil Mengji",
-				role: "Co-Founder",
-				image:
-					"https://media.licdn.com/dms/image/D5603AQEamguVr4e5UA/profile-displayphoto-shrink_400_400/0/1701718025399?e=1720656000&v=beta&t=Rx05yZTySavIqsUoFPgtmjMbxvND10Nvg0GddUolyPQ",
+				name: "Jane Doe",
+				role: "Worker",
 			},
 			{
-				name: "Sahil Kumar",
-				role: "Co-Founder",
-				image:
-					"https://img.freepik.com/free-photo/young-adult-enjoying-virtual-date_23-2149328221.jpg?size=626&ext=jpg&ga=GA1.1.546243260.1706593150&semt=ais",
-			},
-		],
-		Founders: [
-			{
-				name: "Abhay Tai",
-				role: "Founder",
-				image:
-					"https://media.licdn.com/dms/image/D5603AQFm5xdxd0vHKA/profile-displayphoto-shrink_100_100/0/1712607280250?e=1720656000&v=beta&t=dLXQtOIiC5v-M6PJf8M67iKpUwgKDYP4bamsx0rWLz4",
+				name: "John Doe",
+				role: "Worker",
 			},
 			{
-				name: "Sahil Mengji",
-				role: "Co-Founder",
-				image:
-					"https://media.licdn.com/dms/image/D5603AQEamguVr4e5UA/profile-displayphoto-shrink_400_400/0/1701718025399?e=1720656000&v=beta&t=Rx05yZTySavIqsUoFPgtmjMbxvND10Nvg0GddUolyPQ",
+				name: "Jane Doe",
+				role: "Worker",
 			},
 			{
-				name: "Sahil Kumar",
-				role: "Co-Founder",
-				image:
-					"https://img.freepik.com/free-photo/close-up-portrait-smiling-young-bearded-man_171337-4819.jpg?w=1060&t=st=1713959851~exp=1713960451~hmac=34940b0d57af03134523c3886b183e38c73ce7678f31fe88965bd80f1d10ff46",
-			},
-		],
-		webTeam: [
-			{
-				name: "Abhay Tai",
-				role: "Founder",
-				image:
-					"https://media.licdn.com/dms/image/D5603AQFm5xdxd0vHKA/profile-displayphoto-shrink_100_100/0/1712607280250?e=1720656000&v=beta&t=dLXQtOIiC5v-M6PJf8M67iKpUwgKDYP4bamsx0rWLz4",
+				name: "John Doe",
+				role: "Worker",
 			},
 			{
-				name: "Sahil Mengji",
-				role: "Co-Founder",
-				image:
-					"https://media.licdn.com/dms/image/D5603AQEamguVr4e5UA/profile-displayphoto-shrink_400_400/0/1701718025399?e=1720656000&v=beta&t=Rx05yZTySavIqsUoFPgtmjMbxvND10Nvg0GddUolyPQ",
+				name: "Jane Doe",
+				role: "Worker",
 			},
-			{
-				name: "Sahil Kumar",
-				role: "Co-Founder",
-				image:
-					"https://img.freepik.com/free-photo/close-up-portrait-smiling-young-bearded-man_171337-4819.jpg?w=1060&t=st=1713959851~exp=1713960451~hmac=34940b0d57af03134523c3886b183e38c73ce7678f31fe88965bd80f1d10ff46",
-			},
-		],
-		designTeam: [],
-		marketingTeam: [],
+		]
 	};
-
 	const carouselRef = useRef(null);
 
 	const scrollCarousel = (direction) => {
@@ -109,62 +72,93 @@ const Carousel = React.forwardRef((props, ref) => {
 	}, [autoSlideEnabled]); // Re-run effect when auto slide state changes
 
 	return (
-		<div ref={ref} className="h-screen w-full bg-black text-5xl flex flex-col justify-center items-center mt-60">
-			<div className="h-[20%] w-full bg-black flex justify-center items-center">
-				<h1 className="" id="Team">
+		<div ref={ref} className="h-screen w-full bg-black text-5xl flex flex-col justify-center items-center mt-30">
+			<div className="h-[20%] w-full bg-black flex justify-center">
+				<h1 className="flex" id="Team">
 					OUR TEAM
 				</h1>
 			</div>
 			<div className="h-[10%] w-full bg-black flex justify-center items-center">
-				<div className="w-full  bg-black flex justify-center items-center text-lg text-white flex-wrap gap-6">
-					<div
-						className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
-							"All"
-						)}`}
-						onClick={() => setSelectedTab("All")}
-					>
-						<span>All</span>
-					</div>
+				<div className="w-full bg-black flex justify-center items-center text-lg text-white flex-wrap md:flex-row flex-col gap-5 mt-10 md:mt-0">
+					<div className="flex gap-5">
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"All"
+							)}`}
+							onClick={() => setSelectedTab("All")}
+						>
+							<span>All</span>
+						</div>
 
-					<div
-						className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
-							"Founders"
-						)}`}
-						onClick={() => setSelectedTab("Founders")}
-					>
-						<span>Founders</span>
-					</div>
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"Founders"
+							)}`}
+							onClick={() => setSelectedTab("Founders")}
+						>
+							<span>Founders</span>
+						</div>
 
-					<div
-						className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
-							"webTeam"
-						)}`}
-						onClick={() => setSelectedTab("webTeam")}
-					>
-						<span>Web-Team</span>
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"webTeam"
+							)}`}
+							onClick={() => setSelectedTab("webTeam")}
+						>
+							<span>Web-Team</span>
+						</div>
 					</div>
-
-					<div
-						className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
-							"designTeam"
-						)}`}
-						onClick={() => setSelectedTab("designTeam")}
-					>
-						<span>Design-Team</span>
+					
+					<div className="flex gap-5 md:text-xl text-sm">
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"designTeam"
+							)}`}
+							onClick={() => setSelectedTab("designTeam")}
+						>
+							<span>Design-Team</span>
+						</div>
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"marketingTeam"
+							)}`}
+							onClick={() => setSelectedTab("marketingTeam")}
+						>
+							<span>Marketing-Team</span>
+						</div>
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"AppTeam"
+							)}`}
+							onClick={() => setSelectedTab("AppTeam")}
+						>
+							<span>App-Team</span>
+						</div>
 					</div>
-					<div
-						className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
-							"marketingTeam"
-						)}`}
-						onClick={() => setSelectedTab("marketingTeam")}
-					>
-						<span>Marketing-Team</span>
-					</div>
+					<div className="flex gap-5 text-sm md:text-xl">
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"BackendTeam"
+							)}`}
+							onClick={() => setSelectedTab("BackendTeam")}
+						>
+							<span>Backend-Team</span>
+						</div>
+						<div
+							className={`cursor-pointer  transition duration-300 ease-in-out text-[#999999] ${getTabClassName(
+								"AiTeam"
+							)}`}
+							onClick={() => setSelectedTab("AiTeam")}
+						>
+							<span>AI-ML</span>
+						</div>
+						</div>
 				</div>
 			</div>
-			<div className="h-[75%] w-full bg-black flex justify-center items-center gap-10 p-10 relative">
+			
+			<div className="h-[75%] w-full bg-black flex justify-center items-center gap-10 p-10 relative md:flex-row flex-col mt-10 md:mt-10">
 				<button
-					className="carousel-btn right border-2 rounded-full p-3 border-[#A79FFF]"
+					className="carousel-btn right border-2 rounded-full p-3 border-[#A79FFF] hidden md:block"
 					onClick={() => {
 						scrollCarousel("left");
 						stopAutoSlide();
@@ -174,8 +168,8 @@ const Carousel = React.forwardRef((props, ref) => {
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 25 25"
-							width="24"
-							height="24"
+							width="20"
+							height="20"
 						>
 							<path
 								style={{ fill: "#A79FFF" }}
@@ -206,7 +200,7 @@ const Carousel = React.forwardRef((props, ref) => {
 									/>
 									<img
 										className="absolute w-[60px] h-[60px] bottom-[-15px] right-[-15px]"
-										src="/linkedin.svg"
+										src="linkedin.svg"
 										alt=""
 									/>
 								</div>
@@ -217,8 +211,54 @@ const Carousel = React.forwardRef((props, ref) => {
 						</div>
 					))}
 				</div>
+				<div className="flex block md:hidden">
+					<button
+						className="carousel-btn right border-2 rounded-full p-3 border-[#A79FFF] "
+						onClick={() => {
+							scrollCarousel("left");
+							stopAutoSlide();
+						}}
+					>
+						{
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 25 25"
+								width="20"
+								height="20"
+							>
+								<path
+									style={{ fill: "#A79FFF" }}
+									d="M24 12.001H2.914l5.294-5.295-.707-.707L1 12.501l6.5 6.5.707-.707-5.293-5.293H24v-1z"
+									data-name="Left"
+								/>
+							</svg>
+						}
+					</button>
+					<button
+						className="carousel-btn right border-2 rounded-full p-3 border-[#A79FFF]"
+						onClick={() => {
+							scrollCarousel("right");
+							stopAutoSlide();
+						}}
+					>
+						{
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 25 25"
+								width="20"
+								height="20"
+							>
+								<path
+									style={{ fill: "#A79FFF" }}
+									d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
+									data-name="Right"
+								/>
+							</svg>
+						}
+					</button>
+				</div>
 				<button
-					className="carousel-btn right border-2 rounded-full p-3 border-[#A79FFF]"
+					className="carousel-btn right border-2 rounded-full p-3 border-[#A79FFF] hidden md:block"
 					onClick={() => {
 						scrollCarousel("right");
 						stopAutoSlide();
@@ -228,8 +268,8 @@ const Carousel = React.forwardRef((props, ref) => {
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 25 25"
-							width="24"
-							height="24"
+							width="20"
+							height="20"
 						>
 							<path
 								style={{ fill: "#A79FFF" }}
